@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>upload</title>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.bootcss.com/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.bootcss.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</head>
+<body class="container">
+<header>
+    <div class="navbar navbar-expand-">
+        <div class="navbar-text text-center">
+            <h1>Share Your Travels</h1>
+            <p>let us know where you've been</p>
+        </div>
+        <ul class="nav justify-content-center">
+            <li class="nav-item">
+                <a class="nav-link text-dark" href="Lab04.html">Gallery</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-dark" href="#">Feeling Lucky</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-dark" href="#">User</a>
+            </li>
+        </ul>
+    </div>
+</header>
+<form class="form-bordered">
+<table class="col-sm-12" >
+    <tr>
+        <th>
+            <h1>Photo Details</h1>
+        </th>
+    </tr>
+    <tr>
+        <td>
+            <p >Title</p>
+            <input type="text" class="col-sm-12"  placeholder="Give your photo a descriptive name" >
+            <br>
+            <p>Description</p>
+            <input  row="2" class="col-sm-12" type="text"  placeholder="Adding a rich description will help with search results">
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <label for="sel1">Continent</label>
+        <select class="form-control" id="sel1" >
+            <option>Choose continent</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+        </select>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <label for="sel1">Country</label>
+        <select class="form-control" id="sel2" >
+            <option>Choose country</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+        </select>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <label for="comment">City</label>
+            <textarea class="form-control" rows="" id="comment"></textarea>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <label >Copyright?</label>
+            <div class="radio">
+                <label><input type="radio" name="optradio">All rights reserved</label>
+            </div>
+            <div class="radio">
+                <label><input type="radio" name="optradio" checked >Creative Commons</label>
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <div class="form-check form-check-inline">
+                <label class="form-check-label">
+                    <input type="checkbox" class="form-check-input" value="">Attribution
+                </label>
+            </div>
+            <div class="form-check form-check-inline">
+                <label class="form-check-label">
+                    <input type="checkbox" class="form-check-input" value="">Noncommercial
+                </label>
+            </div>
+            <div class="form-check form-check-inline disabled">
+                <label class="form-check-label">
+                    <input type="checkbox" class="form-check-input" value="" >No Derivative Works
+                </label>
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <div class="form-check">
+                <br>
+                <input type="checkbox" class="form-check-input" value="">I accept the software license
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td >
+            <br>
+            <div class="row">
+                <div class="col-xl-3"><label for="sel3">Rate this photos:</label>
+                    <select class="form-control" id="sel3" >
+                        <option></option>
+                    </select></div>
+                <div class="col-xl-2"> <p></p></div>
+                <div class="col-xl-7"><label for="comment1">Color Collection:</label>
+                    <textarea class="form-control" rows="1" id="comment1"></textarea></div>
+            </div>
+    </tr>
+    <tr>
+        <td>
+            <br>
+            <div class="row">
+                <div class="col-xl-6"><label for="comment2">Date Taken:</label>
+                    <textarea class="form-control" rows="1" id="comment2"></textarea></div>
+                <div class="col-xl-2"><p></p></div>
+                <div class="col-xl-4"> <label for="comment3">Time Taken:</label>
+                    <textarea class="form-control" rows="1" id="comment3"></textarea></div>
+            </div>
+        <br>
+    </tr>
+    <tr>
+        <td>
+            <div class="btn-group">
+                <button type="button" class="btn btn-secondary">Submit</button>
+                <button type="reset"  class="btn btn-secondary">Clear</button>
+            </div>
+        </td>
+    </tr>
+</table>
+</form>
+</body>
+</html>
