@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lab7</title>
+    <!--<link href="css/Lab07.css" rel="stylesheet" />-->
+    <link href="css/reset.css" rel="stylesheet"/>
+    <!--<script src="js/Lab07.js" type="text/JavaScript"></script>-->
+    <style>
+        body {
+            text-align: center;
+        }
+        #select, #commit, #nowTable {
+            width: 300px;
+        }
+        table {
+            margin: 0 auto;
+        }
+        th {
+            background-color: grey;
+            color: whitesmoke;
+        }
+        tr:nth-child(odd) td {
+            background-color: lightgrey;
+        }
+        td {
+            padding: 0 0.5em;
+        }
+    </style>
+</head>
+<body onload="displayc()">
+<form id="form">
+    <select  id="select" onchange="displayc()">
+        <option>SELECT ONE</option>
+        <option>CREATE TABLE</option>
+        <option>ADD ROW</option>
+        <option>DELETE ROW</option>
+        <option>DELETE TABLE</option>
+    </select>
+    <div id="content"></div>
+    <div id="content2"></div>
+    <input type="button" value="commit" id="commit" onclick="fff()">
+</form>
+<select  id="nowTable">
+    <option>SELECT (default)</option>
+</select>
+<table id="table"></table>
+</body>
+
+<script>
+    var content=document.getElementById("content");
+    var content2=document.getElementById("content2");
+    var tn1 =document.createElement("input") ;
+    var tn =document.createElement("input") ;
+    var arra=new Array();
+    function displayc() {
+        var myselect=document.getElementById("select");
+        var index=myselect.selectedIndex;
+        var commit=document.getElementById("commit");
+        //清除以前的痕迹
+        content.innerHTML="";
+        content2.innerHTML="";
+        switch (index){
+            case 0:
+                commit.style.display="none";
+                break;
+            case 1:
+                tn.setAttribute("type","text");
+                tn.setAttribute("placeholder","Table Name");
+                content.appendChild(tn);
+                tn1.setAttribute("type","number");
+                tn1.setAttribute("placeholder","Columns Numbers");
+                content.appendChild(tn1);
+                var num5=tn1.value;
+                tn1.onchange=function(){
+            //         if (index == 1) {
+                display2();
+            // }else {
+            //     display3();
+            // }
+        };
+                arra.unshift(num5);
+                break;
+            case 2:
+                commit.style.display="inline";
+                display3();
+                break;
+            case 3:
+                break;
+            case 4:
+                break;
+            default:
+                break;
+        }
+        function display2(){
+            commit.style.display="none";
+            content2.innerHTML="";
+            var num1=tn1.value;
+            if (num1 > 0) {
+                for (var i=0;i<num1;i++){
+                    var tn2 =document.createElement("input") ;
+                    tn2.setAttribute("type","text");
+                    tn2.setAttribute("placeholder","Attribute");
+                    content2.appendChild(tn2);
+                }
+                commit.style.display="inline";
+            }
+        }
+        function display3() {
+            var num2=2;
+            if (num2 > 0) {
+                for (var j=0;j<num2;j++){
+                    var tn3 = document.createElement("input");
+                    tn3.setAttribute("type","text");
+                    tn3.setAttribute("placeholder","Attribute");
+                    content.appendChild(tn3);
+                }
+            }
+        }
+    }
+    function fff() {
+        var table=document.getElementById("table");
+        var myselect=document.getElementById("select");
+        var index=myselect.selectedIndex;
+        var n2=tn1.value;
+        if (index==1){
+            var name1 = tn.value;
+            var select2=document.getElementById("nowTable");
+            if (name1==""||name1==undefined) {
+            }else {
+                var option1=document.createElement("option");
+                option1.innerHTML=name1;
+                select2.appendChild(option1);
+                select2.selected=true;
+            }
+            var tr1=document.createElement("tr");
+            table.appendChild(tr1);
+            for (let k =0;k < n2;k++){
+                var th =document.createElement("th");
+                th.innerHTML="Attribute";
+                tr1.appendChild(th);
+            }
+        }
+        else{
+            var tr2=document.createElement("tr");
+            table.appendChild(tr2);
+            for (let k =0;k < n2;k++){
+                var td =document.createElement("td");
+                td.innerHTML="Attribute";
+                tr2.appendChild(td);
+            }
+        }
+    }
+</script>
+</body>
+</html>
